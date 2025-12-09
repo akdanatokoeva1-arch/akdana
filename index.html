@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MZ Digital — Магазин</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">MZ Digital</div>
+      <nav class="nav">
+        <a href="#products">Товары</a>
+        <a href="#about">О нас</a>
+        <a href="#" id="cart-btn">Корзина (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-slider" id="hero-slider">
+        <button class="slide-nav left" id="slide-left" aria-label="предыдущий">&#10094;</button>
+        <div class="slides">
+          <div class="slide" data-index="0">
+            <img src="https://i.ytimg.com/vi/xsNyHKvt85A/maxresdefault.jpg" alt="Banner 1">
+            <div class="slide-caption">
+              <h1>Современный интернет-магазин</h1>
+              <p>Качественные товары, быстрая доставка и удобная покупка.</p>
+            </div>
+          </div>
+          <div class="slide" data-index="1">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1400&q=60" alt="Banner 2">
+            <div class="slide-caption">
+              <h1>Лучшие предложения</h1>
+              <p>Еженедельные скидки и подборки от нашей команды.</p>
+            </div>
+          </div>
+          <div class="slide" data-index="2">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1400&q=60" alt="Banner 3">
+            <div class="slide-caption">
+              <h1>Адаптивный дизайн</h1>
+              <p>На мобильном и десктопе — всё выглядит отлично.</p>
+            </div>
+          </div>
+        </div>
+        <button class="slide-nav right" id="slide-right" aria-label="следующий">&#10095;</button>
+        <div class="dots" id="slider-dots"></div>
+      </div>
+    </section>
+
+    <section class="features container">
+      <div class="feature">
+        <h3>Удобная оплата</h3>
+        <p>Имитация оплаты — просто нажми "Оформить".</p>
+      </div>
+      <div class="feature">
+        <h3>Доставка</h3>
+        <p>Быстрая обработка заказов и удобная упаковка.</p>
+      </div>
+      <div class="feature">
+        <h3>Поддержка</h3>
+        <p>Пиши нам — поможем выбрать товар.</p>
+      </div>
+    </section>
+
+    <section id="products" class="products container">
+      <h2>Популярные товары</h2>
+      <div class="products-grid" id="products-grid">
+        <!-- Products injected by JS -->
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <h2>О магазине</h2>
+      <p>Mizanov Tech — специализированный магазин цифровой и бытовой техники.
+Мы предлагаем сертифицированную продукцию, прозрачные условия обслуживания и индивидуальный подход к каждому клиенту.
+Наша цель — обеспечить надёжность, качество и долгосрочное сотрудничество.</p>
+    </section>
+  </main>
+
+  <!-- Cart Modal -->
+  <div class="modal" id="cart-modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" id="cart-close">&times;</button>
+      <h3>Корзина</h3>
+      <div id="cart-items"></div>
+      <div class="cart-footer">
+        <strong>Итого: <span id="cart-total">0</span> сом</strong>
+        <button id="checkout-btn" class="primary">Оформить</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal" id="checkout-modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" id="checkout-close">&times;</button>
+      <h3>Оформление заказа</h3>
+      <form id="checkout-form">
+        <label>Имя<br><input type="text" id="cust-name" required></label>
+        <label>Телефон<br><input type="tel" id="cust-phone" required></label>
+        <label>Адрес<br><input type="text" id="cust-address" required></label>
+        <div class="form-actions">
+          <button type="submit" class="primary">Оплатить (имитация)</button>
+        </div>
+      </form>
+      <div id="checkout-thanks" class="thankyou" hidden>
+        <h4>Спасибо за покупку!</h4>
+        <p>Ваш заказ принят. Это имитация — реальной оплаты нет.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> MZ Digital — учебный проект.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
